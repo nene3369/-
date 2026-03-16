@@ -1,0 +1,19 @@
+[package]
+name = "consciousness-kernel"
+version = "11.0.0"
+edition = "2021"
+authors = ["Ikeda Fuyuya"]
+description = "Consciousness kernel — psychological processes through Buddhist epistemology and FEP"
+license = "MIT OR Apache-2.0"
+rust-version = "1.85"
+
+[dependencies]
+blake3 = { version = "1", optional = true }
+serde = { version = "1", features = ["derive"], optional = true }
+serde_json = { version = "1", optional = true }
+
+[features]
+default = []
+crypto = ["blake3"]
+serialization = ["serde", "serde_json"]
+prod = ["crypto"]
