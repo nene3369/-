@@ -90,9 +90,13 @@ consciousness-kernel/
 ## Build & Test
 
 ```bash
-# Minimum: Rust 1.85+
+git clone https://github.com/nene3369/consciousness-kernel.git
+cd consciousness-kernel
+cargo test --all-features       # 838 tests, Rust 1.85+
+```
+
+```bash
 cargo test                      # 779 tests (default features)
-cargo test --all-features       # 838 tests (with blake3 + serde)
 cargo build --features prod     # Production: requires crypto (blake3)
 ```
 
